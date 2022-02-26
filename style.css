@@ -1,0 +1,81 @@
+.heading
+{
+    width:100%;
+    text-align: left;
+    background-color:lightskyblue;
+    color:midnightblue;
+    font-size:20px;
+}
+
+.heading h3
+{
+    display: inline;
+    font-family: 'Luckiest Guy', cursive;
+    font-size:40px;
+
+    background-image:url("https://static.vecteezy.com/system/resources/previews/000/204/051/original/vector-abstract-gradient-background.jpg");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    animation: mario 2s ease infinite;
+
+
+} 
+@keyframes mario{
+    0%{
+        background-size:0%;
+    }
+    25%{
+        background-size:100%;
+    }
+    50%
+    {
+        background-size:200%;
+    }
+} 
+
+.Instructions
+{
+    background-color:lightskyblue;
+    color:midnightblue;
+    float:right;
+    border: 2px solid midnightblue;
+    font-family: 'Luckiest Guy', cursive;
+    font-size:25px;
+    text-align: center;
+}
+
+.big_image
+{
+    width: 100%;
+    
+}
+
+#start
+{
+    background-color:limegreen;
+    color:seagreen;
+    font-size:30px;
+    font-family: 'Luckiest Guy', cursive;
+    text-align:center;
+}
+
+#status
+{
+    background-color:tomato;
+    color:indianred;
+
+}
+
+body
+{
+    background-size: cover;
+}
+
+#restart
+{
+    background-color:red;
+    color:crimson;
+    font-size:30px;
+    font-family: "Luckiest Guy", cursive;
+    text-align:center;
+}

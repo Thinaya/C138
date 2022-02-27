@@ -79,3 +79,22 @@ body
     font-family: "Luckiest Guy", cursive;
     text-align:center;
 }
+
+.instructions_image
+{
+    display: inline-block;
+    width: 45%;
+}
+
+.modal-body
+{
+    background-color:lightblue;
+    font-size:23px;
+    font-family: "Luckiest Guy", cursive;
+}
+
+h4{
+    font-size:25px;
+    font-family: "Luckiest Guy", cursive;
+    background-color:skyblue;
+}

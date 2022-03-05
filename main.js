@@ -1,6 +1,7 @@
 
 /*created by prashant shukla */
-
+rightWristX = 0;
+rightWristY = 0;
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -23,9 +24,25 @@ var ball = {
 
 function setup(){
   var canvas =  createCanvas(700,600);
+  video = createCapture(VIDEO);
+  video.size(650, 550);
   canvas.parent('canvas');
+
+  poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose' , gotPoses);
 }
 
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
+function gotPoses(results) {
+  if(results.length > 0)
+  {
+    rightWristX = results[0].pose.rightWrist.x;
+    rightWristY = results[0].pose.rightWrist.y;
+  }
+}
 
 function draw(){
 

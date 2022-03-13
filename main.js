@@ -1,4 +1,4 @@
-
+game_status = "";
 /*created by prashant shukla */
 rightWristX = 0;
 rightWristY = 0;
@@ -20,6 +20,12 @@ var ball = {
     r:20,
     dx:3,
     dy:3
+}
+
+function startGame()
+{
+  game_status = "start";
+  document.getElementById("status").innerHTML = "Game Is Loaded";
 }
 
 function setup(){
@@ -45,7 +51,8 @@ function gotPoses(results) {
 }
 
 function draw(){
-
+if(game_status == "start")
+{
  background(0); 
 
  fill("black");
@@ -83,6 +90,7 @@ function draw(){
    
    //function move call which in very important
     move();
+}
 }
 
 

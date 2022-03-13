@@ -22,10 +22,26 @@ var ball = {
     dy:3
 }
 
+function preload()
+{
+  ball_touch = loadSound("ball_touch_paddel.wav");
+  missed = loadSound("missed.wav");
+}
+
 function startGame()
 {
   game_status = "start";
   document.getElementById("status").innerHTML = "Game Is Loaded";
+}
+
+function restart(){
+pcscore = 0;
+playerscore = 0;
+if (pcscore = playerscore)
+{
+  text("Press the restart button to play again!", width/2,height/2+30);
+
+}
 }
 
 function setup(){
@@ -70,8 +86,8 @@ if(game_status == "start")
    fill(250,0,0);
     stroke(0,0,250);
     strokeWeight(0.5);
-   paddle1Y = mouseY; 
-   rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
+   mouseY = rightWristY; 
+   rect(paddle1X,mouseY,paddle1,paddle1Height,100);
    
    
     //pc computer paddle
@@ -141,14 +157,16 @@ function move(){
        ball.dx=-ball.dx-0.5;       
    }
   if (ball.x-2.5*ball.r/2< 0){
-  if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
+    ball_touch.play();
+  if (ball.y >= paddle1Y&& ball.y <= paddle1 + paddle1Height) {
     ball.dx = -ball.dx+0.5; 
   }
   else{
     pcscore++;
     reset();
     navigator.vibrate(100);
-  }
+    missed.play();
+    }
 }
 if(pcscore ==4){
     fill("#FFA500");
